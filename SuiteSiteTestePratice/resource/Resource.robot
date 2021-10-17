@@ -27,3 +27,6 @@ Clicar no botão pesquisar
     Click Element    name=submit_search
 
 Conferir se o produto "${PRODUTO}" foi listado no site 
+    Wait Until Element Is Visible       css=#center_column > h1
+    Title Should Be    Search - My Store
+    Page Should Contain Image     
