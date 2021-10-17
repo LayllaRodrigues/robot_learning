@@ -21,3 +21,9 @@ Acessar a página home do site
     Title Should Be    My Store
 
 Digitar o nome do produto "${PRODUTO}" no campo de pesquisa
+    Input Text    name=search_query    ${PRODUTO}
+
+Clicar no botão pesquisar 
+    Click Element    name=submit_search
+
+Conferir se o produto "${PRODUTO}" foi listado no site 
