@@ -1,27 +1,33 @@
 *** Settings ***
-Library            Selenium
-Test Setup         Abrir navegador
-Test Teardown      Fechar Navegador
-
-### SETUP roda keyword antes da suite ou teste
-### TEARDOWN roda keyword depois da suite ou teste
+Resource        ../resource/Resource.robot
+Test Setup      Abrir navegador
+Test Teardown   Fechar navegador
 
 *** Variables ***
-${URL}                    http://automationpractice.com
-${BROWSER}                chrome
+${URL}          http://automationpractice.com
+${BROWSER}      chrome
 
-*** Test Cases ***
+*** Test Case ***
 Cenário 01: Pesquisar produto existente
-    Dado que estou na página home do site 
+    Dado que estou na página home do site
     Quando eu pesquisar pelo produto "Blouse"
     Então o produto "Blouse" deve ser listado na página de resultado da busca
-   
+
 Cenário 02: Pesquisar produto não existente
-    Dado que estou na página do site 
-    Quando eu pesquisar pelo produto "ItemNãoExistente"
-    Então a página deve exibir a mensagem ""No results were found for your search "ItemNãoExistente""
+    Dado que estou na página home do site
+    Quando eu pesquisar pelo produto "itemNãoExistente"
+    Então a página deve exibir a mensagem "No results were found for your search "itemNãoExistente""
 
-    
 *** Keywords ***
+Dado que estou na página home do site
+    Acessar a página home do site
 
-    
+Quando eu pesquisar pelo produto "${PRODUTO}"
+    Digitar o nome do produto "${PRODUTO}" no campo de pesquisa
+    Clicar no botão pesquisar
+
+Então o produto "${PRODUTO}" deve ser listado na página de resultado da busca
+    Conferir se o produto "${PRODUTO}" foi listado no site
+
+Então a página deve exibir a mensagem "${MENSAGEM_ALERTA}"
+    Conferir mensagem de erro "${MENSAGEM_ALERTA}"

@@ -1,25 +1,20 @@
 *** Settings ***
-Library    Selenium
+Resource            ../resource/Resource.robot
+Test Setup          Abrir navegador
+Test Teardown       Fechar navegador
 
-*** Variables ***
-${URL}                    http://automationpractice.com
-${BROWSER}                chrome
+### SETUP: ele roda keyword antes da suite ou antes de um teste
+### TEARDOWN: ele roda keyword depois de uma suite ou um teste
 
-*** Test Cases ***
-Caso de teste 01: Pesquisar produto existente
+*** Test Case ***
+Caso de Teste 01: Pesquisar produto existente
     Acessar a página home do site
-    Conferir se a palavra home foi exibida
     Digitar o nome do produto "Blouse" no campo de pesquisa
     Clicar no botão pesquisar
     Conferir se o produto "Blouse" foi listado no site
 
-Caso de teste 02: Pesquisar produto não existente
+Caso de Teste 02: Pesquisar produto não existente
     Acessar a página home do site
-    Conferir se a palavra home foi exibida
-    Digitar o nome do produto "ItemNãoExistente" no campo de pesquisa
+    Digitar o nome do produto "itemNãoExistente" no campo de pesquisa
     Clicar no botão pesquisar
-    Conferir mensagem de erro "No results were found for your search "ItemNãoExistente""
-
-*** Keywords ***
-
-    
+    Conferir mensagem de erro "No results were found for your search "itemNãoExistente""
