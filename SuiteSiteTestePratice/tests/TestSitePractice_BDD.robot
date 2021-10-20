@@ -32,6 +32,12 @@ Cenário 04: Adicionar Produtos no carrinho
     E Clicar no botão "Proceed to checkout
     Então tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores
 
+Cenário 5: Remover Produtos
+    Dado que estou na página home do site
+    Quando clicar no ícone carrinho de compras no menu superior direito
+    E clicar no botão de remoção de produtos (delete) no produto do carrinho
+    Então o sistema deve exibir a mensagem "Your shopping cart is empty."
+    
 Cenário 06: Adicionar cliente 
     Dado que estou na página home do site
     Quando eu clicar no botão superior direito “Sign in”
