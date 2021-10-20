@@ -24,6 +24,14 @@ Cenário 03: Listar Produtos
     Quando eu passar o mouse por cima da categoria ${woman}
     Então as sub categorias devem ser exibidas.
 
+Cenário 04: Adicionar Produtos no carrinho
+    Dado que estou na página home do site
+    Quando eu digitar o nome de produto "t-shirt" no campo de pesquisa.
+    E clicar no botão de pesquisa
+    E Clicar no botão "Add to cart" do produto
+    E Clicar no botão "Proceed to checkout
+    Então tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores
+
 Cenário 06: Adicionar cliente 
     Dado que estou na página home do site
     Quando eu clicar no botão superior direito “Sign in”
@@ -72,3 +80,17 @@ E clicar em "Register"para finalizar o cadastro.
 
 
 Então a página de gerenciamento da conta deve ser exibida
+
+Dado que estou na página home do site
+
+Quando eu digitar o nome de produto "t-shirt" no campo de pesquisa.
+
+E clicar no botão de pesquisa
+
+E Clicar no botão "Add to cart" do produto
+
+E Clicar no botão "Proceed to checkout
+
+Então tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores
+
+
