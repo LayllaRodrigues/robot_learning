@@ -5,6 +5,7 @@ Library    String
 *** Variables ***
 ${BROWSER}      chrome
 ${URL}          http://automationpractice.com
+&{Cliente}      nome=Laylla        sobrenome=Rodrigues        senha=123456        endereço=Rua Framework, Bairro Robot        cidade=Floripa        estado=9        CEP=12345        telefone=99887766
 
 *** Keywords ***
 #### Setup e Teardown
@@ -67,17 +68,17 @@ Clicar em "Create an account"
 Preencher os dados obrigatórios
     Wait Until Element Is Visible   xpath=//*[@id="account-creation_form"]//h3[contains(text(),"Your personal information")]
     Click Element                   id=id_gender2
-    Input Text                      id=customer_firstname    Laylla 
-    Input Text                      id=customer_lastname     Rodrigues
-    Input Text                      id=passwd                123456
-    Input Text                      id=address1              Rua Framework, Bairro Robot
-    Input Text                      id=city                  Floripa
+    Input Text                      id=customer_firstname    &{Cliente[0]}
+    Input Text                      id=customer_lastname     &{Cliente[1]}
+    Input Text                      id=passwd                &{Cliente[2]}
+    Input Text                      id=address1              &{Cliente[3]}
+    Input Text                      id=city                  &{Cliente[4]}
     Set Focus To Element            id=id_state
    
     Run Keyword If    '${BROWSER}'=='chrome'  Wait Until Element Is Visible   id=id_state
-    Select From List By Index       id=id_state              9
-    Input Text                      id=postcode              12345
-    Input Text                      id=phone_mobile          99988877
+    Select From List By Index       id=id_state              &{Cliente[5]}
+    Input Text                      id=postcode              &{Cliente[6]}
+    Input Text                      id=phone_mobile          &{Cliente[7]}
 
 Submeter cadastro
     Click Button    submitAccount
