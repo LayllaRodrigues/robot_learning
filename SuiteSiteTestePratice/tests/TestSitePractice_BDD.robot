@@ -38,7 +38,7 @@ Cenário 03: Listar Produtos
 
 Cenário 06: Adicionar Cliente
     Dado que estou na página home do site
-    Quando eu solictar cadastro de novo cliente
+    Quando eu solicitar cadastro de novo cliente
     Então o cadastro deve ser efetuado com sucesso
 
 *** Keywords ***
@@ -80,7 +80,7 @@ E existe o produto "${PRODUTO}" adicionado no carrinho
 Quando excluir o produto do carrinho
     Excluir o produto do carrinho
 
-Quando eu solictar cadastro de novo cliente
+Quando eu solicitar cadastro de novo cliente
     Clicar em "Sign in"
     Informar um e-mail válido
     Clicar em "Create an account"
