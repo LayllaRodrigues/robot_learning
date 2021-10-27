@@ -24,21 +24,21 @@ Cenário 03: Listar Produtos
     E consultar a sub-categoria "Summer Dresses"
     Então a página deve exibir os produtos da sub-categoria "Summer Dresses"
 
-# Cenário 04: Adicionar Produtos no Carrinho
-#     Dado que estou na página home do site
-#     Quando eu pesquisar pelo produto "t-shirt"
-#     E adicionar o produto no carrinho
-#     Então a tela do carrinho deve ser mostrada juntamente cos dados e valores do produto
+Cenário 04: Adicionar Produtos no Carrinho
+    Dado que estou na página home do site
+    Quando eu pesquisar pelo produto "t-shirt"
+    E adicionar o produto no carrinho
+    Então a tela do carrinho deve ser mostrada juntamente cos dados e valores do produto
 
-# Cenário 05: Remover Produtos
-#     Dado que estou na página home do site
-#     E existe o produto "t-shirt" adicionado no carrinho
-#     Quando excluir o produto do carrinho
-#     Então a página deve exibir a mensagem "Your shopping cart is empty."
+Cenário 05: Remover Produtos
+    Dado que estou na página home do site
+    E existe o produto "t-shirt" adicionado no carrinho
+    Quando excluir o produto do carrinho
+    Então a página deve exibir a mensagem "Your shopping cart is empty."
 
 Cenário 06: Adicionar Cliente
     Dado que estou na página home do site
-    Quando eu solicitar cadastro de novo cliente
+    Quando eu solictar cadastro de novo cliente
     Então o cadastro deve ser efetuado com sucesso
 
 *** Keywords ***
@@ -80,7 +80,7 @@ E existe o produto "${PRODUTO}" adicionado no carrinho
 Quando excluir o produto do carrinho
     Excluir o produto do carrinho
 
-Quando eu solicitar cadastro de novo cliente
+Quando eu solictar cadastro de novo cliente
     Clicar em "Sign in"
     Informar um e-mail válido
     Clicar em "Create an account"
